@@ -67,9 +67,23 @@
 
 
 
- let arr =  [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
+ let str = 'tHE qUICK bROWN fOX';
+ const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+ let result= [];
+ for(let i = 0; i<str.length;i++){
 
- let finalArr = arr.sort((a,b)=>{
-  return a-b
- })
-console.log(finalArr);
+  if(UPPER.indexOf(str[i]) == -1){
+    result.push(str[i].toUpperCase());
+  }
+
+   else if(LOWER.indexOf(str[i]) == -1){
+     result.push(str[i].toLowerCase());
+  }
+
+  else{
+     result.push(str[i]);
+  }
+ }
+
+ console.log(result.join(''));
