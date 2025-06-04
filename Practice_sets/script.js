@@ -48,19 +48,28 @@
 // console.log(myFunc())
 
 
-document.getElementById("outer").addEventListener("click", () => {
-    console.log("Outer Div Clicked");
-  },true);
+// document.getElementById("outer").addEventListener("click", () => {
+//     console.log("Outer Div Clicked");
+//   },true);
   
-  document.getElementById("inner").addEventListener("click", () => {
-    console.log("Inner Div Clicked");
-  });
+//   document.getElementById("inner").addEventListener("click", () => {
+//     console.log("Inner Div Clicked");
+//   });
   
-  document.getElementById("btn").addEventListener("click", (e) => {
-    console.log("Button Clicked");
+//   document.getElementById("btn").addEventListener("click", (e) => {
+//     console.log("Button Clicked");
 
    
-  });
+//   });
 
-  document.body.addEventListener("click",() => {
-    console.log("body Clicked");})
+//   document.body.addEventListener("click",() => {
+//     console.log("body Clicked");})
+
+
+
+ let arr =  [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
+
+ let finalArr = arr.sort((a,b)=>{
+  return a-b
+ })
+console.log(finalArr);
