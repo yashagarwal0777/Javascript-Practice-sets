@@ -67,23 +67,51 @@
 
 
 
- let str = 'tHE qUICK bROWN fOX';
- const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const LOWER = 'abcdefghijklmnopqrstuvwxyz';
- let result= [];
- for(let i = 0; i<str.length;i++){
+//  let str = 'tHE qUICK bROWN fOX';
+//  const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+//  let result= [];
+//  for(let i = 0; i<str.length;i++){
 
-  if(UPPER.indexOf(str[i]) == -1){
-    result.push(str[i].toUpperCase());
-  }
+//   if(UPPER.indexOf(str[i]) == -1){
+//     result.push(str[i].toUpperCase());
+//   }
 
-   else if(LOWER.indexOf(str[i]) == -1){
-     result.push(str[i].toLowerCase());
-  }
+//    else if(LOWER.indexOf(str[i]) == -1){
+//      result.push(str[i].toLowerCase());
+//   }
 
-  else{
-     result.push(str[i]);
-  }
- }
+//   else{
+//      result.push(str[i]);
+//   }
+//  }
 
- console.log(result.join(''));
+
+
+// Declare and initialize the original array
+const arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+
+// Initialize variables to track the most frequent item, its frequency, and the current item's frequency
+let mf = 1;
+let m = 0;
+let item;
+
+// Iterate through the array to find the most frequent item
+for (let i = 0; i < arr1.length; i++) {
+    // Nested loop to compare the current item with others in the array
+    for (let j = i; j < arr1.length; j++) {
+        // Check if the current item matches with another item in the array
+        if (arr1[i] == arr1[j])
+            m++;
+        // Update the most frequent item and its frequency if the current item's frequency is higher
+        if (mf < m) {
+            mf = m;
+            item = arr1[i];
+        }
+    }
+    // Reset the current item's frequency for the next iteration
+    m = 0;
+}
+
+// Output the most frequent item and its frequency
+console.log(item + " ( " + mf + " times ) ");
