@@ -89,29 +89,51 @@
 
 
 // Declare and initialize the original array
-const arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+// const arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
 
-// Initialize variables to track the most frequent item, its frequency, and the current item's frequency
-let mf = 1;
-let m = 0;
-let item;
+// // Initialize variables to track the most frequent item, its frequency, and the current item's frequency
+// let mf = 1;
+// let m = 0;
+// let item;
 
-// Iterate through the array to find the most frequent item
-for (let i = 0; i < arr1.length; i++) {
-    // Nested loop to compare the current item with others in the array
-    for (let j = i; j < arr1.length; j++) {
-        // Check if the current item matches with another item in the array
-        if (arr1[i] == arr1[j])
-            m++;
-        // Update the most frequent item and its frequency if the current item's frequency is higher
-        if (mf < m) {
-            mf = m;
-            item = arr1[i];
-        }
-    }
-    // Reset the current item's frequency for the next iteration
-    m = 0;
+// // Iterate through the array to find the most frequent item
+// for (let i = 0; i < arr1.length; i++) {
+//     // Nested loop to compare the current item with others in the array
+//     for (let j = i; j < arr1.length; j++) {
+//         // Check if the current item matches with another item in the array
+//         if (arr1[i] == arr1[j])
+//             m++;
+//         // Update the most frequent item and its frequency if the current item's frequency is higher
+//         if (mf < m) {
+//             mf = m;
+//             item = arr1[i];
+//         }
+//     }
+//     // Reset the current item's frequency for the next iteration
+//     m = 0;
+// }
+
+// // Output the most frequent item and its frequency
+// console.log(item + " ( " + mf + " times ) ");
+
+
+
+
+// Declare and initialize a sample 2-D array
+const a = [
+  [1, 2, 1, 24],
+  [8, 11, 9, 4],
+  [7, 0, 7, 27],
+  [7, 4, 28, 14],
+  [3, 10, 26, 7]
+];
+// Iterate through each row in the 2-D array
+for (const i in a) {
+  // Output the current row index
+  console.log(`row ${i}`);
+  // Iterate through each element in the current row
+  for (const j in a[i]) {
+    // Output the current element value
+    console.log(` ${a[i][j]}`);
+  }
 }
-
-// Output the most frequent item and its frequency
-console.log(item + " ( " + mf + " times ) ");
