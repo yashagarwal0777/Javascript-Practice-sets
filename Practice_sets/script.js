@@ -173,3 +173,35 @@ const uniqueNumsArray = [...uniqueNumsSet];
 
 // Output the array with duplicates removed
 console.log(uniqueNumsArray);
+
+
+
+
+
+
+
+// Declare an array 'color' containing color names
+
+const color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+
+// Function to generate ordinal numbers (1st, 2nd, 3rd, etc.)
+const Ordinal = (n) => {
+  // Define an array 'o' for suffixes of ordinal numbers
+  const o = ["th", "st", "nd", "rd"];
+  const x = n % 100;
+
+  // Return the ordinal number with the appropriate suffix
+  return x + (o[(x - 20) % 10] || o[x] || o[0]);
+};
+
+// Loop through each element in the 'color' array using forEach
+color.forEach((_, index) => {
+  // Calculate the ordinal number for the current position
+  const ordinal = index + 1;
+
+  // Create a string with the ordinal number, color choice, and a period
+  const output = `${Ordinal(ordinal)} choice is ${color[index]}.`;
+
+  // Output the string to the console
+  console.log(output);
+});
