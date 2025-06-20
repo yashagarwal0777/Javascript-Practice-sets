@@ -178,7 +178,15 @@ console.log(uniqueNumsArray);
 
 
 
+// Write a JavaScript program to display the colors in the following way.
 
+// Here is the sample array:
+// color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+// o = ["th","st","nd","rd"]
+// Output
+// "1st choice is Blue ."
+// "2nd choice is Green."
+// "3rd choice is Red."
 
 // Declare an array 'color' containing color names
 
@@ -205,3 +213,43 @@ color.forEach((_, index) => {
   // Output the string to the console
   console.log(output);
 });
+
+
+
+// UNION OF TWO ARRAYS
+// Function to find the union of two arrays
+const union = (arra1, arra2) => {
+  // Check if either of the arrays is null, return undefined if true
+  if ((arra1 == null) || (arra2 == null))
+    return void 0;
+
+  // Initialize an empty object to store unique elements from both arrays
+  const obj = {};
+
+  // Iterate through the elements of arra1 in reverse order
+  for (let i = arra1.length - 1; i >= 0; --i)
+    // Use each element as a key in the object to store unique values
+    obj[arra1[i]] = arra1[i];
+
+  // Iterate through the elements of arra2 in reverse order
+  for (let i = arra2.length - 1; i >= 0; --i)
+    // Use each element as a key in the object to store unique values
+    obj[arra2[i]] = arra2[i];
+
+  // Initialize an empty array to store the result (union)
+  const res = [];
+
+  // Iterate through the properties of the object
+  for (let n in obj) {
+    // Check if the property belongs to the object (not inherited)
+    if (obj.hasOwnProperty(n))
+      // Push the unique value to the result array
+      res.push(obj[n]);
+  }
+
+  // Return the result array containing the union of the two input arrays
+  return res;
+};
+
+// Output the result of the union function with sample arrays
+console.log(union([1, 2, 3], [100, 2, 1, 10]));
